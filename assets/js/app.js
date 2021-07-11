@@ -30,8 +30,8 @@ var chartGroup = svg.append("g")
 // Function used for updating x-scale var upon click on axis label
 function xScale(stateData, chosenXAxis) {
     var xLinearScale = d3.scaleLinear()
-        .domain([d3.min(stateData, d => d[chosenXAxis]) * 0.9,
-        d3.max(stateData, d => d[chosenXAxis])
+        .domain([d3.min(stateData, d => d[chosenXAxis]) - (d3.min(stateData, d => d[chosenXAxis]) * 0.05),
+        d3.max(stateData, d => d[chosenXAxis] * 1.02)
         ])
         .range([0, width]);
 
@@ -199,11 +199,11 @@ d3.csv(csvData).then(function (stateData, err) {
         .attr("cx", d => xLinearScale(d[chosenXAxis]))
         .attr("cy", d => yLinearScale(d[chosenYAxis]))
         .attr("r", "14")
-        .attr("fill", "lightblue")
+        .attr("class", "stateCircle")
         .attr("opacity", ".8");
 
     // Create circle label 
-    var circlesText = chartGroup.selectAll(null)//("stateText")
+    var circlesText = chartGroup.selectAll(null)
         .data(stateData)
         .enter()
         .append("text")

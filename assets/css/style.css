@@ -63,3 +63,7 @@ body {
   stroke: #e3e3e3;
 }
 
+.stateCircle:hover{
+  fill: #89bdd3;
+  stroke: rgb(20, 17, 202);
+}
