@@ -43,3 +43,23 @@ body {
   border: 0;
   border-radius: 10px;
 }
+
+.xAxisText, yAxisText {
+  font-family: sans-serif;
+  font-weight: bold;
+  fill: #551aaf;
+  text-anchor: middle;
+}
+
+.stateText {
+  font-family: sans-serif;
+  fill: rgb(247, 243, 243);
+  text-anchor: middle;
+  font-size: 12px;
+}
+
+.stateCircle {
+  fill: #89bdd3;
+  stroke: #e3e3e3;
+}
+
